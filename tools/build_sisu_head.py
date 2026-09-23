@@ -93,6 +93,7 @@ def page(slug, title, desc, body, extra_head=""):
           <li><a href="about.html">About Angus</a></li>
           <li><a href="app.html">The app</a></li>
           <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
         </ul>
       </div>
       <div>
