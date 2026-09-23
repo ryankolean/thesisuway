@@ -461,7 +461,7 @@ print("wrote specimen.html")
 
 
 # ---------------------------------------------------------------- launch files
-PAGES = ['index.html', 'about.html', 'app.html', 'privacy.html']
+PAGES = ['index.html', 'about.html', 'app.html', 'privacy.html', 'terms.html']
 if PROD:
     _p = ROOT / "404.html"; _p.write_text(_p.read_text().replace('"/thesisuway/', '"/'))
     _m = ROOT / "site.webmanifest"; _m.write_text(_m.read_text().replace('"/thesisuway/', '"/'))
