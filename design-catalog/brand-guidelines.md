@@ -1,199 +1,140 @@
 # Brand Guidelines: The Sisu Way
 
-**Version:** 0.1, 2026-09-23. Proposal by Summit Software Solutions, pending Angus Peacock's approval.
+**Version:** 0.2, 2026-09-23. Summit Software Solutions, pending Angus Peacock's approval.
 **Live version:** [`specimen.html`](../specimen.html) renders every token, pair and component below.
 
 ## Principle
 
-Unlike Roses or Meantime, The Sisu Way has no brand surfaces to measure yet. The name is new, thesisuway.com is not public, and the concept was built without access to the current app or the Wix site. So this system is **proposed, not extracted**. Every choice is argued from what is publicly known about the project, and every value is tested for contrast. When Angus supplies a logo, colors or type he already uses, those win, and this document gets revised.
+**The website follows the app.** The SISU app (`sisu-platform/sisu-platform`, live at sisu-way.netlify.app) already has a visual identity in its stylesheet: deep blue, maize gold, Playfair Display and DM Sans. v0.1 of this guide proposed a separate northern palette before we had access to the app; v0.2 replaces it with the app's own values so the website and the product read as one brand. The website adds only what a marketing site needs: a text-safe gold and pillar rules.
 
-What the brand has to carry, from public sources:
+| Source in the app (`prototype.html`) | Value | Website token |
+|---|---|---|
+| `--white` | `#F8FAFC` | `--white` |
+| `--surface` | `#EAF2FB` | `--surface` |
+| `--charcoal` | `#1C2833` | `--charcoal` |
+| `--blue-deep` | `#003580` | `--blue` |
+| `--amber-ink` (navy text on gold) | `#0A2540` | `--navy` |
+| `--blue-steel` | `#2E86C1` | `--steel` |
+| `--amber` ("maize gold") | `#FFCB05` | `--maize` |
+| `--slate` | `#566573` | `--slate` |
+| Heart pillar color | `#C0392B` | `--heart` |
+| `--gold-deep` / Soul pillar | `#B8860B` | `--gold` |
+| Headings font | Playfair Display 700/900 | `--font-display` |
+| Body font | DM Sans | `--font-body` |
+| *(new, derived)* | `#7A5A06` | `--gold-ink`: maize family darkened until it passes AA on white |
 
-| Fact | Source |
-|---|---|
-| *Sisu* is the Finnish concept of stubborn resolve and resilience under adversity, the "second wind" | Common usage; Angus's book |
-| Angus Peacock's book *SISU: A Series of Epic Adventures* (Tactical 16) is a true account crossing the French Alps, Moscow, Beijing and Mongolia by rail and on foot | Tactical 16, Amazon listing |
-| Angus is a rugby coach and coach educator, Royal Navy veteran, life coach | Public coaching profiles, blackdragonenterprises.com |
-| The Notion workspace is titled "🏉 SISU Way — Project Command Centre" | Notion share email, 2026-09-22 |
-| Investors want the app on iOS and Android | Kincaid, 2026-09-23 |
-
-**The idea: fire in the cold.** A northern landscape at dusk (snow, granite, deep fjord water) with one warm color that stands for the second wind. That warm color is spent only on the single action that matters on each screen.
+App copy used verbatim on the site: **"Move. Endure. Thrive."**, **"Real-life resilience. Invest in yourself. Thrive forever."**, **"Momentum is magical."**, the "What is Sisu?" definition, the four pillar descriptions, and the session types and formats.
 
 ## Color
 
-### Tokens
-
 ```css
 :root {
-  /* Core */
-  --snow:        #F4F2ED;  /* page field */
-  --mist:        #DDE4E4;  /* tint sections, panels */
-  --granite:     #1B1F23;  /* body text, headings on light */
-  --fjord:       #1D4A5C;  /* the brand color: links, rules, secondary buttons */
-  --fjord-deep:  #0F2B37;  /* dark sections, footer, concept bar */
-  --aurora:      #E3A33B;  /* primary CTA fill, the mark's sun, labels on dark */
-  /* Support */
-  --aurora-deep: #8A5A0F;  /* aurora's text-safe form on light */
-  --slate:       #56616B;  /* secondary text on snow and mist only */
+  --white:    #F8FAFC;  /* page field */
+  --surface:  #EAF2FB;  /* tint sections, panels */
+  --charcoal: #1C2833;  /* body text */
+  --blue:     #003580;  /* brand blue: links, accents, secondary buttons */
+  --navy:     #0A2540;  /* dark sections, footer, concept bar */
+  --steel:    #2E86C1;  /* decorative only: rules, Body pillar */
+  --maize:    #FFCB05;  /* primary CTA fill, the sun, labels on dark */
+  --slate:    #566573;  /* secondary text on light */
+  --gold-ink: #7A5A06;  /* amber-family text on light */
+  --heart:    #C0392B;  /* Heart pillar */
+  --gold:     #B8860B;  /* Soul pillar, decorative only */
 }
 ```
 
-### Roles
-
-| Token | Use for | Never use for |
-|---|---|---|
-| `--snow` | Default page background, text on dark | Text on aurora |
-| `--mist` | Alternate sections, store panel, muted text on dark | Text on snow (1.15:1) |
-| `--granite` | All body text and headings on light, text on aurora buttons | Large fills (use fjord-deep) |
-| `--fjord` | Links, secondary buttons, hairlines, the word "Sisu" in the wordmark | Text on fjord-deep |
-| `--fjord-deep` | Hero, dark sections, footer, concept bar | Text anywhere |
-| `--aurora` | Primary button fill, the sun, labels and accents on dark | Text on light backgrounds |
-| `--aurora-deep` | Amber text on light: card numbers, placeholder notes | Large fills |
-| `--slate` | Captions and secondary text on snow or mist | Anything on dark |
-
-**Proportion.** Roughly 60% snow and mist, 30% fjord-deep and granite, under 10% aurora. If a screen has two aurora buttons, one of them is wrong.
+**Proportion.** Mostly white and surface; navy for the hero, one feature band and the footer; maize on exactly one action per view.
 
 ### WCAG contrast, every pair in use
 
-Computed to WCAG 2.1 relative luminance. AA needs 4.5:1 for normal text, 3:1 for large text (≥24px, or ≥18.66px bold).
-
 | Text | Background | Ratio | AA | AAA |
 |---|---|---|---|---|
-| `--granite` | `--snow` | **14.82** | pass | pass |
-| `--granite` | `--mist` | **12.86** | pass | pass |
-| `--fjord` | `--snow` | **8.59** | pass | pass |
-| `--fjord` | `--mist` | **7.45** | pass | pass |
-| `--snow` | `--fjord` | **8.59** | pass | pass |
-| `--snow` | `--fjord-deep` | **13.21** | pass | pass |
-| `--mist` | `--fjord-deep` | **11.46** | pass | pass |
-| `--aurora` | `--fjord-deep` | **6.73** | pass | — |
-| `--granite` | `--aurora` | **7.55** | pass | pass |
-| `--aurora-deep` | `--snow` | **5.29** | pass | — |
-| `--aurora-deep` | `--mist` | **4.59** | pass | — |
-| `--slate` | `--snow` | **5.66** | pass | — |
-| `--slate` | `--mist` | **4.91** | pass | — |
-| `--snow` | `--granite` | **14.82** | pass | pass |
+| `--charcoal` | `--white` | **14.33** | pass | pass |
+| `--charcoal` | `--surface` | **13.27** | pass | pass |
+| `--blue` | `--white` | **11.02** | pass | pass |
+| `--blue` | `--surface` | **10.21** | pass | pass |
+| `--white` | `--blue` | **11.02** | pass | pass |
+| `--white` | `--navy` | **14.85** | pass | pass |
+| `--surface` | `--navy` | **13.76** | pass | pass |
+| `--maize` | `--navy` | **10.21** | pass | pass |
+| `--maize` | `--blue` | **7.58** | pass | pass |
+| `--navy` | `--maize` | **10.21** | pass | pass |
+| `--gold-ink` | `--white` | **6.10** | pass | — |
+| `--gold-ink` | `--surface` | **5.65** | pass | — |
+| `--slate` | `--white` | **5.73** | pass | — |
+| `--slate` | `--surface` | **5.30** | pass | — |
+| `--heart` | `--white` | **5.20** | pass | — |
 
 ### Forbidden pairs
 
 | Text | Background | Ratio | Rule |
 |---|---|---|---|
-| `--snow` | `--aurora` | 1.96 | **Never.** Aurora buttons take granite text |
-| `--aurora` | `--snow` | 1.96 | **Never as text.** Use `--aurora-deep` |
-| `--aurora` | `--mist` | 1.70 | **Never as text** |
-| `--fjord` | `--aurora` | 4.38 | Large text only. Avoid |
-| `--slate` | `--fjord-deep` | 2.33 | **Never.** Muted text on dark uses `--mist` |
-| `--fjord` | `--fjord-deep` | 1.54 | **Never as text** |
+| `--white` | `--maize` | 1.45 | **Never.** Maize buttons take navy text |
+| `--maize` | `--white` | 1.45 | **Never as text.** Use `--gold-ink` |
+| `--steel` | `--white` | 3.79 | Decorative only |
+| `--gold` | `--white` | 3.11 | Decorative only |
+| `--slate` | `--navy` | 2.59 | **Never.** Muted text on dark uses `--surface` |
+
+## The four pillars
+
+Each pillar keeps its color from the app, used only as a 5px top rule on pillar cards and in charts, never as text.
+
+| Pillar | Emoji | Subtitle | Description (from the app) | Color |
+|---|---|---|---|---|
+| Heart | ❤️ | Connectivity | Relationships & gratitude | `--heart` `#C0392B` |
+| Body | ⚡ | Movement | Movement, fuel & physical resilience | `--steel` `#2E86C1` |
+| Mind | 🧠 | Learning | Learning, positivity & language | `--blue` `#003580` |
+| Soul | 🔥 | Purpose | Purpose, meaning & inner fire | `--gold` `#B8860B` |
 
 ## Typography
 
 ```css
---font-display: "Barlow Condensed", "Arial Narrow", system-ui, sans-serif;  /* headings, labels, buttons, nav */
---font-body:    "Source Serif 4", Georgia, "Times New Roman", serif;          /* everything you read slowly */
+--font-display: "Playfair Display", Georgia, serif;   /* headings, quotes, wordmark */
+--font-body:    "DM Sans", system-ui, sans-serif;     /* everything else */
 ```
 
-**Why.** Condensed uppercase reads like trail signage and team kit: direct, physical, built for a glance, and it fits long words like "RESILIENCE" on a phone. The serif keeps the book in the brand. The Sisu Way starts as a story, and body copy should read like one. Both are free on Google Fonts and can be self-hosted.
+Both are the app's own fonts, self-hosted from `assets/fonts/` (SIL OFL).
 
-### Scale
+| Element | Family | Size | Weight | Line height |
+|---|---|---|---|---|
+| Display | Playfair Display | clamp(46px, 8vw, 92px) | 900 | 1.0 |
+| H1 | Playfair Display | clamp(38px, 5.5vw, 64px) | 700 | 1.08 |
+| H2 | Playfair Display | clamp(30px, 4vw, 46px) | 700 | 1.08 |
+| H3 | Playfair Display | clamp(21px, 2.4vw, 26px) | 700 | 1.2 |
+| Label | DM Sans | 13px, uppercase, 0.18em | 700 | 1.2 |
+| Button / nav | DM Sans | 15px, uppercase, 0.06em / 15px | 700 / 600 | 1.1 |
+| Lede | DM Sans | clamp(18px, 2.1vw, 22px) | 400 | 1.55 |
+| Body | DM Sans | 18px (17px < 640px) | 400 | 1.65 |
 
-| Element | Family | Size | Weight | Line height | Case / tracking |
-|---|---|---|---|---|---|
-| Display | Barlow Condensed | clamp(48px, 9vw, 100px) | 700 | 0.95 | Uppercase, 0.01em |
-| H1 | Barlow Condensed | clamp(40px, 6vw, 68px) | 700 | 1.02 | Uppercase |
-| H2 | Barlow Condensed | clamp(32px, 4.5vw, 48px) | 700 | 1.02 | Uppercase |
-| H3 | Barlow Condensed | clamp(22px, 2.6vw, 28px) | 700 | 1.1 | Uppercase, 0.02em |
-| Label | Barlow Condensed | 15px | 600 | 1.2 | Uppercase, **0.18em** |
-| Button / nav | Barlow Condensed | 18px | 700 / 600 | 1.1 | Uppercase, 0.1em |
-| Lede | Source Serif 4 | clamp(18px, 2.2vw, 22px) | 400 | 1.55 | Sentence case |
-| Body | Source Serif 4 | 19px (18px < 640px) | 400 | 1.65 | Sentence case |
-| Quote | Source Serif 4 italic | clamp(18px, 2.4vw, 24px) | 400 | 1.5 | Sentence case |
-
-### Rules
-
-- Condensed caps for anything scanned; serif for anything read. Never set a paragraph in Barlow Condensed.
-- Headings are uppercase by CSS, written in sentence case in the HTML so screen readers don't spell them out.
-- Measure is capped at 62ch.
-- Use the word *sisu* in italics in running text the first time it appears on a page, with a plain-English gloss.
+Headings in sentence case. Uppercase only for labels and buttons.
 
 ## Mark
 
-A snow ridge line in front of a lower fjord ridge, with the aurora sun rising behind the peak. It is the moment the second wind arrives. Files: `assets/img/mark.svg`, `favicon.svg`.
+The app has no logo. The concept mark (`assets/img/mark.svg`) is a white ridge in front of a steel ridge with the maize sun rising behind the peak, on a navy disc. Drawn for the concept; refine after the trademark search. Wordmark: mark + "The **Sisu** Way" in Playfair 900, with "Sisu" in blue on light and maize on dark.
 
-- **Placeholder quality.** Drawn for the concept. A designer should refine it after the name clears a trademark search (see below).
-- Minimum 24px for the mark alone, 120px wide for the lockup.
-- Clear space equal to the diameter of the sun on all sides.
-- Lockup: mark + "THE SISU WAY" in Barlow Condensed 700, 0.06em tracking. "Sisu" alone takes the brand color: fjord on light, aurora on dark.
-- Never recolor the sun, stretch the mark, add effects, or place it on aurora.
+## Components
+
+- **Buttons**: pill-shaped like the app. Primary maize with navy text; secondary blue outline (white outline on dark). 48px minimum height.
+- **Pillar cards**: white, hairline border, 12px radius, 5px pillar-color top rule, emoji, Playfair name, uppercase subtitle.
+- **Session types and formats**: translucent tiles on navy (Self-directed, Group practice, SISU with Angus; Micro under 20 min, Midi 21–44, Full 45+).
+- **Video**: 16:9, 12px radius, YouTube privacy-enhanced (`youtube-nocookie.com`) embed of the app's intro video.
+- **Store badges**: concept stand-ins, replaced by Apple's and Google's official badges at launch.
+- **Placeholder marker**: dashed gold-ink box on every unconfirmed item.
+- **Concept bar**: navy strip above the header on every page. Removed at launch.
 
 ## Motif
 
-**Contour lines.** A journey drawn as elevation (`assets/img/contours.svg`). Behind dark sections at 22% opacity, inverted to light; behind light sections at 14%. Never in color, never behind long body text on a light section.
+Topographic contour lines behind navy sections at 20%, inverted; behind light sections at 12%.
 
-## Style guide
+## Voice
 
-### Spacing
-
-8-point scale: `4 8 12 16 24 32 48 64 96 128`. Sections are 96px tall padding on desktop, 64px on phones. The container is 1120px with 32px gutters, 16px under 640px.
-
-### Radii, borders, shadows
-
-- Buttons 3px, cards and panels 8px, pills fully rounded.
-- Borders are a 1px fjord hairline at 22% opacity. Solid fjord for emphasis only.
-- **No drop shadows.** Depth comes from the snow / mist / fjord-deep bands.
-
-### Buttons
-
-| Variant | Fill | Text | Border | Hover |
-|---|---|---|---|---|
-| Primary | aurora | granite | none | `#CF8F27` fill |
-| Secondary (light) | none | fjord | 2px fjord | fjord fill, snow text |
-| Secondary (dark) | none | snow | 2px snow | snow fill, fjord-deep text |
-| Disabled / not yet live | none | slate (mist on dark) | 2px dashed | none |
-
-All buttons are at least 48px tall (44px on the header's compact variant), uppercase condensed 18px.
-
-### Components on the concept
-
-- **Card**: snow, hairline border, 8px radius, number in aurora-deep, H3, serif body.
-- **Facts list**: condensed bold term above a serif description, hairline between.
-- **Store badges**: dark granite pill with a phone glyph. These are **stand-ins**. At launch they are replaced with Apple's and Google's official badges, which come with their own usage rules.
-- **Placeholder marker**: dashed aurora-deep box. Every unconfirmed piece of content carries it.
-- **Concept bar**: fjord-deep strip above the header on every page, reading "CONCEPT PREVIEW — Designed and built by Summit Software Solutions for The Sisu Way." Removed at launch.
-
-### Motion
-
-Hover transitions only, 150ms ease-out. `prefers-reduced-motion` disables them.
-
-## Voice and tone
-
-Write like a good coach talks at half-time: short sentences, no hype, no exclamation marks. Name the hard thing, then the next step.
-
-| Say | Don't say |
-|---|---|
-| Keep going. Find the second wind. | Unleash your potential! |
-| Train your sisu. | Crush your goals. Beast mode. |
-| It's hard. Here's the next step. | Transform your life in 30 days. |
-
-## Photography direction
-
-Nothing is shot yet. When it is: real places over stock, cold light, wide landscapes with a small human figure, rugby and training in bad weather, hands and faces mid-effort rather than triumphant poses. Treat photos with no filters; let the fjord-deep bands carry the mood.
+Use the app's own lines: short, physical, no hype. "Move. Endure. Thrive." "Invest in yourself." "Momentum is magical." Explain what sisu means the first time it appears on a page.
 
 ## Trademark note (important)
 
-"Sisu" is crowded, **including in rugby**:
+"Sisu" is crowded, including in rugby: **SISU mouthguards** (a major rugby mouthguard brand), **SISU Collective** (wellness), and **sisu-thebrand.com**. A proper USPTO and app store search on "The Sisu Way" must happen before the mark is finalized or anything goes public. Tracked in Jira SUMMIT-206.
 
-- **SISU mouthguards** are a well-known rugby brand sold by World Rugby Shop and others.
-- A wellness company trades as **SISU Collective**, and **sisu-thebrand.com** runs a "SISU Collective" community.
+## Changelog
 
-A trademark search on "The Sisu Way" (USPTO and app store names) must happen before the brand is finalized, the mark is redrawn, or anything goes on a public URL. Tracked in Jira SUMMIT-206.
-
-## Traceability
-
-| Decision | Reason |
-|---|---|
-| Northern palette | Sisu is Finnish; the book's journey crosses the Alps, Russia and Mongolia |
-| One warm accent | "Second wind" as a single point of warmth; keeps CTAs unmistakable |
-| Barlow Condensed | Rugby kit and trail signage; long words fit on phones |
-| Source Serif 4 | The brand begins as a book |
-| Contour motif | A journey measured in elevation |
-| Granite text on aurora | Snow on aurora fails at 1.96:1 |
+- **v0.2 (2026-09-23)**: aligned to the live SISU app: palette, fonts, pillars, taglines and features. v0.1's northern palette (fjord blue and aurora amber, Barlow Condensed and Source Serif 4) is retired.
+- **v0.1 (2026-09-23)**: first proposal, made before we had app access.

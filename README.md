@@ -15,28 +15,28 @@ Static HTML, no framework, no build step.
 
 | Page | What |
 |---|---|
-| `index.html` | Landing: what sisu is, the four-pillar practice, Angus and the book, the app |
+| `index.html` | Landing: what sisu is, the four pillars (Heart, Body, Mind, Soul), ways to train, intro video, Angus and the book |
 | `about.html` | Angus Peacock, with links to Black Dragon Enterprises |
-| `app.html` | Portal to the web app, plus App Store and Google Play links ("coming soon" until the apps ship) |
-| `privacy.html` | Section skeleton for the privacy policy both app stores require |
+| `app.html` | Portal to the live web app, plus App Store and Google Play links ("coming soon" until the apps ship) |
+| `privacy.html` | Draft privacy policy built from how the pilot app handles data |
 | `specimen.html` | The brand system, rendered |
 
 ## Brand system
 
-Proposed rather than measured: the brand has no existing surfaces to sample yet. Full rationale, contrast tables and rules in [`design-catalog/brand-guidelines.md`](design-catalog/brand-guidelines.md).
+Matched to the live SISU app (`sisu-platform/sisu-platform`), so the site and the product are one brand. Full tokens, contrast tables and rules in [`design-catalog/brand-guidelines.md`](design-catalog/brand-guidelines.md).
 
 | Token | Value | Role |
 |---|---|---|
-| `--snow` | `#F4F2ED` | Page field |
-| `--mist` | `#DDE4E4` | Tint sections |
-| `--granite` | `#1B1F23` | Text |
-| `--fjord` | `#1D4A5C` | Brand color, links |
-| `--fjord-deep` | `#0F2B37` | Dark sections, footer, concept bar |
-| `--aurora` | `#E3A33B` | Primary action only |
-| `--aurora-deep` | `#8A5A0F` | Amber text on light |
-| `--slate` | `#56616B` | Secondary text on light |
+| `--white` | `#F8FAFC` | Page field |
+| `--surface` | `#EAF2FB` | Tint sections |
+| `--charcoal` | `#1C2833` | Text |
+| `--blue` | `#003580` | Brand blue, links |
+| `--navy` | `#0A2540` | Dark sections, footer, concept bar |
+| `--maize` | `#FFCB05` | Primary action only |
+| `--gold-ink` | `#7A5A06` | Amber text on light |
+| `--slate` | `#566573` | Secondary text on light |
 
-Type is **Barlow Condensed** (headings, labels, buttons) and **Source Serif 4** (reading text). Every text and background pair in use passes WCAG AA; the forbidden pairs are listed in the guidelines.
+Pillar colors: Heart `#C0392B`, Body `#2E86C1`, Mind `#003580`, Soul `#B8860B`. Type is **Playfair Display** (headings) and **DM Sans** (everything else), the app's own pair, self-hosted. Every text and background pair in use passes WCAG AA.
 
 ## Research
 
@@ -49,8 +49,9 @@ Type is **Barlow Condensed** (headings, labels, buttons) and **Source Serif 4** 
 ## Known placeholders
 
 - **The mark** is drawn for the concept and waits on a trademark search: "SISU" is already a rugby mouthguard brand.
-- **Pillars and app features** are proposed from Angus's published work, not from the app itself.
-- **"Open the web app"** and the store badges are deliberately not linked yet.
+- **"Open the web app"** links to the live pilot at sisu-way.netlify.app until the domain moves.
+- **Store badges** are stand-ins until the iPhone and Android apps ship.
+- **Angus's portrait and own bio** are still needed; the About copy is from public profiles.
 - **Privacy policy** is a section skeleton only.
 - **No photography.** Nothing has been supplied, and stock would misrepresent the brand.
 

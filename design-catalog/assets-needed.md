@@ -4,11 +4,11 @@ Everything the concept is missing, in one list. Each item is marked on the pages
 
 | # | Item | From | Blocks |
 |---|---|---|---|
-| 1 | Any existing logo, colors or fonts Angus already uses for Sisu | Angus | Final brand system |
+| 1 | ~~Existing colors and fonts~~ Done: taken from the SISU app. Still needed: a logo, if one exists | Angus | Final mark |
 | 2 | Trademark search result for "The Sisu Way" (SISU mouthguards and SISU Collective already exist) | Summit / Angus | Mark redraw, public launch |
-| 3 | Confirmed pillar names and descriptions (the concept proposes Mindset, Endurance, Recovery, Community) | Angus / Notion roadmap | Home page, app page |
-| 4 | What the web app actually does today: features, screenshots, sign-in URL | Access to `sisu-platform` repo and Netlify | App page feature list, "Open the web app" link |
-| 5 | Portrait of Angus, plus his own current bio and credentials | Angus | About page |
+| 3 | ~~Pillar names~~ Done: Heart, Body, Mind, Soul, from the app | — | — |
+| 4 | ~~Web app features and URL~~ Done from the `sisu-platform` repo. Still wanted: app screenshots for the App page | Summit | App page visuals |
+| 5 | Portrait of Angus, with permission to publish, plus his own current bio. LinkedIn could not be reached from the build environment, and its photo should not be reused without his permission anyway | Angus | About page |
 | 6 | Book cover image and permission to use it | Angus / Tactical 16 | Home and About pages |
 | 7 | Photography: training, rugby, landscapes | Angus | All pages (concept has none on purpose) |
 | 8 | The address to use for Sisu email (the concept uses angus@blackdragonenterprises.com) | Angus | Footer, contact links |
