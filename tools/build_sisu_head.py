@@ -2,8 +2,10 @@
 import pathlib, textwrap
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-BASE = "https://ryankolean.github.io/thesisuway/"
-BDE = "https://ryankolean.github.io/blackdragonenterprises/"
+import os
+PROD = os.environ.get("SITE_ENV") == "production"   # SITE_ENV=production python3 tools/<this file> for the live build
+BASE = "https://thesisuway.com/" if PROD else "https://ryankolean.github.io/thesisuway/"
+BDE = "https://blackdragonenterprises.com/" if PROD else "https://ryankolean.github.io/blackdragonenterprises/"
 YOUTUBE = "https://www.youtube.com/@bytheblackdragon"
 SUBSTACK = "https://substack.com/@sisublackdragon"
 APP = "https://sisu-way.netlify.app/"
@@ -16,6 +18,14 @@ PHONE = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="
 
 NAV = [("index.html", "Home"), ("about.html", "About"), ("app.html", "The App")]
 
+
+ROBOTS = "" if PROD else '<meta name="robots" content="noindex, nofollow">'
+CONCEPT = "" if PROD else """<aside class="concept-bar" aria-label="Concept preview notice">
+  <div class="container">
+    <p><strong>Concept preview</strong>Designed and built by <a href="https://summitsoftwaresolutions.dev/">Summit Software Solutions</a> for The Sisu Way. Not a live site; placeholder content is marked.</p>
+  </div>
+</aside>
+"""
 
 def page(slug, title, desc, body, extra_head=""):
     cur = ' aria-current="page"'
@@ -32,7 +42,7 @@ def page(slug, title, desc, body, extra_head=""):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{url}">
-<meta name="robots" content="noindex, nofollow">
+{ROBOTS}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Sisu Way">
 <meta property="og:title" content="{title}">
@@ -52,12 +62,7 @@ def page(slug, title, desc, body, extra_head=""):
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-<aside class="concept-bar" aria-label="Concept preview notice">
-  <div class="container">
-    <p><strong>Concept preview</strong>Designed and built by <a href="https://summitsoftwaresolutions.dev/">Summit Software Solutions</a> for The Sisu Way. Not a live site; placeholder content is marked.</p>
-  </div>
-</aside>
-
+{CONCEPT}
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="wordmark" href="index.html" aria-label="The Sisu Way, home">{MARK}<span class="wordmark__text">The <span>Sisu</span> Way</span></a>
@@ -109,5 +114,6 @@ def page(slug, title, desc, body, extra_head=""):
 </body>
 </html>
 """
+
 
 

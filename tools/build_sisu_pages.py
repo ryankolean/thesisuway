@@ -365,3 +365,16 @@ BODY=f"""
 """
 (ROOT/"specimen.html").write_text(page("specimen.html","Brand system - The Sisu Way","Palette, typography, mark and components for The Sisu Way, matched to the SISU app.",BODY,STYLE))
 print("wrote specimen.html")
+
+
+# ---------------------------------------------------------------- launch files
+PAGES = ['index.html', 'about.html', 'app.html', 'privacy.html']
+if PROD:
+    _p = ROOT / "404.html"; _p.write_text(_p.read_text().replace('"/thesisuway/', '"/'))
+    _m = ROOT / "site.webmanifest"; _m.write_text(_m.read_text().replace('"/thesisuway/', '"/'))
+    (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {BASE}sitemap.xml\n")
+    (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "".join(f"  <url><loc>{BASE}{'' if p == 'index.html' else p.replace('.html', '')}</loc></url>\n" for p in PAGES) + "</urlset>\n")
+    print("wrote production robots.txt and sitemap.xml")
+else:
+    (ROOT / "robots.txt").write_text("User-agent: *\nDisallow: /\n")
